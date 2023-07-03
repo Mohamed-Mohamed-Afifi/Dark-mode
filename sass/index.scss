@@ -1,0 +1,622 @@
+@import "vars",
+"reset";
+/*Scroll bar*/
+body{
+	background-color: map-get($main,mainColor);
+}
+::-webkit-scrollbar {
+	width: map-get($nav, midSize);
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	box-shadow: inset 0 0 10px rgba(250, 247, 247, 0.938);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	background-color: map-get($nav, mainColor);
+}
+
+
+/*Nav*/
+
+.cube-page {
+	background-color: map-get($main, mainColor);
+	.navbar {
+		.navbar-brand {
+			&:focus {
+				@include reset;
+			}
+			img {
+				cursor: pointer;
+			}
+		}
+		.form-inline {
+			text-transform: uppercase;
+			a {
+				color: map-get($nav, subColor);
+				font-size: map-get($nav, normalSize);
+				text-decoration: none;
+				&:hover {
+					color: map-get($nav, whiteColor0);
+					@include trans;
+				}
+			}
+		}
+		.navbar-toggler {
+			background-color: map-get($nav, mainColor);
+		}
+	}
+	.nav-btn {
+		text-transform: inherit;
+		border-radius: map-get($nav, smallSize);
+		-webkit-border-radius: map-get($nav, smallSize);
+		-moz-border-radius: map-get($nav, smallSize);
+		-ms-border-radius: map-get($nav, smallSize);
+		-o-border-radius: map-get($nav, smallSize);
+		background-color: map-get($nav, mainColor);
+		color: map-get($nav, whiteColor0);
+		font-size: map-get($nav, normalSize);
+		box-shadow: 77px 29px 257px 43px rgb(86, 108, 224);
+		&:hover {
+			@include trans;
+			background-color: map-get($nav, btnColor);
+		}
+	}
+	.banner {
+		padding: map-get($banner, pding);
+		@include flx(column, center, center);
+		.banner-heading {
+			font-size: map-get($main, largeSize);
+			color: map-get($nav, whiteColor0);
+			font-family: 'Merriweather', serif;
+		}
+		.banner-sub-heading {
+			color: map-get($nav, subColor);
+			line-height: map-get($main, largeSize);
+		}
+		.banner-btn {
+			@extend .nav-btn;
+			font-size: map-get($main, smallSize);
+			@include reset;
+		}
+	}
+}
+
+
+/*Figure control*/
+
+.img-control {
+	.card {
+		background-color: transparent;
+		@include reset;
+		.btn-groups {
+			input {
+				@include btn-cir;
+				&:hover {
+					background-color: map-get($nav, whiteColor0);
+					@include trans;
+				}
+			}
+		}
+		.plus-icon {
+			color: map-get($fig, subColor);
+			font-size: map-get($main, mainSize);
+			&:hover {
+				color: map-get($fig, forHover);
+				@include trans;
+			}
+		}
+		.more {
+			@include reset;
+			background-color: transparent;
+			width: fit-content;
+			align-self: flex-end;
+		}
+		.left-side {
+			background-color: map-get($fig, backlight);
+			.upload {
+				border-top: 2px solid map-get($fig, mainColor);
+				.upload-group {
+					.upload-btn {
+						display: flex;
+						align-items: center;
+						@include reset;
+						background-color: transparent;
+						font-size: map-get($main, mainSize);
+						&:hover .fa {
+							color: map-get($nav, whiteColor0);
+							@include trans;
+						}
+					}
+					.fa {
+						color: map-get($fig, mainColor);
+					}
+				}
+			}
+			.upload-line {
+				width: map-get($main, largeSize)*3;
+				height: map-get($nav, smallSize);
+				background-color: map-get($fig, mainColor);
+			}
+		}
+		.settings {
+			background-color: map-get($fig, muted);
+			width: fit-content;
+			font-size: map-get($main, mainSize);
+			@include reset;
+			padding: .5rem .9rem;
+			&:hover .fa {
+				color: map-get($nav, whiteColor0);
+				@include trans;
+			}
+			.fa {
+				color: map-get($fig, mainColor);
+			}
+		}
+	}
+	.right-side {
+		background-image: url('https://preview.cruip.com/cube/images/features-split-image-01.png');
+		background-size: cover;
+		height: map-get($main, largeSize)*20;
+		background-position: 313% 20%;
+		padding: map-get($main, largeSize) map-get($main, smallSize) map-get($main, largeSize)-1;
+		.controls {
+			button {
+				background-color: map-get($fig, muted);
+				@include reset;
+			}
+			.fa {
+				color: map-get($fig, mainColor);
+				font-size: map-get($main, smallSize);
+				&:hover {
+					color: map-get($nav, whiteColor0);
+					@include trans;
+				}
+			}
+		}
+		.alert {
+			background-color: map-get($fig, backlight);
+			width: map-get($main, largeSize)*7;
+			.close {
+				color: map-get($nav, whiteColor0);
+				font-size: map-get($main, largeSize);
+			}
+		}
+		.end-btns {
+			>.light-btn:first-child .fa {
+				transform: rotate(90deg);
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+			}
+			.light-btn {
+				background-color: map-get($fig, muted);
+				width: fit-content;
+				font-size: map-get($main, mainSize);
+				@include reset;
+				padding: .5rem .9rem;
+				&:hover .fa {
+					color: map-get($nav, whiteColor0);
+					@include trans;
+				}
+				.fa {
+					color: map-get($fig, mainColor);
+				}
+			}
+			.ligth-group {
+				.light-btn:nth-child(3) {
+					width: map-get($main, largeSize)+1;
+					background-color: map-get($nav, mainColor);
+					&:hover {
+						background-color: map-get($nav, btnColor);
+						@include trans;
+					}
+					.fa {
+						color: map-get($nav, whiteColor0);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*Clients*/
+
+.sponsor {
+	margin: map-get($main, largeSize)*5 0;
+	.links {
+		border: 1px solid #696f8294;
+		border-left: none;
+		border-right: none;
+	}
+}
+
+
+/*Features*/
+
+.features {
+	.feature-heading {
+		font-size: map-get($main, largeSize);
+		color: map-get($nav, whiteColor0);
+		font-family: 'STIX Two Text', serif;
+	}
+	.feature-sub-heading {
+		color: map-get($nav, subColor);
+		font-size: map-get($main, mainSize);
+		line-height: map-get($main, largeSize);
+		font-family: 'Markazi Text', serif;
+	}
+	.col-lg-4 {
+		img {
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			background-color: map-get($fig, backlight);
+		}
+	}
+	.contents {
+		border-bottom: 1px solid #696f8294;
+	}
+}
+
+.media {
+	.bor {
+		border-bottom: 1px solid #696f8294;
+	}
+	.media-heading {
+		font-size: map-get($main, largeSize);
+		color: map-get($nav, whiteColor0);
+	}
+	.video-control {
+		background-color: map-get($fig, backlight);
+		height: map-get($main, largeSize)*10;
+		@include flexcenter;
+		.play-control {
+			background-color: map-get($fig, silver);
+			border-radius: 50%;
+			;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			@include reset;
+			box-shadow: 8px 17px 257px 43px rgb(86, 108, 224);
+			width: map-get($main, largeSize)*2;
+			height: map-get($main, largeSize)*2;
+			&:hover .fa {
+				color: map-get($fig, subColor);
+				@include trans;
+			}
+			.fa {
+				color: map-get($fig, backdark);
+			}
+		}
+	}
+}
+
+.Videos {
+	.modal-content {
+		background-color: transparent;
+	}
+	video {
+		box-shadow: 77px 29px 257px 43px #566ce042;
+	}
+}
+
+.galary {
+	.galary-content {
+		border-bottom: 1px solid #696f8294;
+		.galary-item:nth-child(2) {
+			.left-part {
+				order: 1;
+			}
+		}
+	}
+	.galary-heading {
+		font-size: map-get($main, largeSize);
+		color: map-get($nav, whiteColor0);
+		font-family: 'Merriweather', serif;
+	}
+	.galary-sub-heading {
+		color: map-get($nav, subColor);
+		line-height: map-get($main, largeSize);
+	}
+}
+
+.sales {
+	.galary-heading {
+		font-size: map-get($main, largeSize);
+		color: map-get($nav, whiteColor0);
+		font-family: 'Merriweather', serif;
+		animation-duration: .9s;
+	}
+	.galary-sub-heading {
+		color: map-get($nav, subColor);
+		line-height: map-get($main, largeSize);
+	}
+}
+.modal{
+	width:100%;
+}
+
+/*pop-up*/
+
+@media (min-width: 576px) {
+	.modal-dialog {
+		max-width: fit-content;
+		width: fit-content;
+		margin: 1.75rem auto;
+	}
+}
+
+
+/*For on-off button*/
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: map-get($fig, backlight);
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked+.slider {
+	background-color: map-get($nav, mainColor);
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+.pay {
+	animation-duration: .9s;
+	.pay-content {
+		background-color: map-get($fig, backlight);
+	}
+	.separator {
+		width: map-get($main, largeSize)*3;
+		height: map-get($nav, smallSize);
+		background-color: map-get($fig, mainColor);
+	}
+	.pay-head {
+		.fa {
+			color: map-get($footer, mainColor);
+			font-size: map-get($main, largeSize);
+		}
+		.galary-sub-heading {
+			color: map-get($footer, mainColor);
+		}
+	}
+	.pay-heading {
+		font-size: map-get($main, smallSize);
+		color: map-get($nav, whiteColor0);
+	}
+	.list-group-item {
+		border: 1px solid #696f8294;
+		border-left: none;
+		border-right: none;
+		background-color: transparent;
+		color: map-get($footer, mainColor);
+		.galary-sub-heading {
+			font-size: map-get($main, smallSize);
+			;
+		}
+		.fa {
+			color: map-get($footer, subColor);
+			background-color: map-get($footer, backColor);
+			padding: map-get($nav, smallSize)*3;
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+		}
+	}
+	.banner-btn {
+		background-color: map-get($nav, mainColor);
+		@include reset;
+		color: map-get($nav, whiteColor0);
+		font-size: map-get($main, smallSize);
+		&:hover {
+			background-color: map-get($nav, btnColor);
+			@include trans;
+		}
+	}
+	.diff {
+		background-color: transparent!important;
+		color: map-get($footer, mainColor)!important;
+	}
+}
+
+
+/*Adverisment*/
+
+.ads {
+	animation-duration: .9s;
+	.ads-heading {
+		color: map-get($nav, whiteColor0);
+		font-size: map-get($main, largeSize);
+	}
+	.ads-content {
+		background: linear-gradient(to right top, #4A61DD 0, #2742CC 100%);
+	}
+	.ads-btn {
+		color: map-get($nav, mainColor);
+		background: linear-gradient(65deg, #DDE2F4 0, rgba(221, 226, 244, 0.8) 100%);
+		@include reset;
+		font-size: map-get($main, smallSize);
+		box-shadow: 0 8px 16px rgba(22, 24, 34, .12)!important;
+		border-radius: .3rem;
+		&:hover {
+			color: map-get($nav, btnColor);
+			@include trans;
+		}
+	}
+}
+
+
+/*Social*/
+
+.social {
+	.social-icons {
+		.fa {
+			color: map-get($nav, mainColor);
+			font-size: map-get($main, mainSize);
+		}
+	}
+}
+
+.footer {
+	.footer-sub-heading {
+		color: map-get($footer, mainColor);
+	}
+	.footer-links {
+		a {
+			text-decoration: none;
+			color: map-get($footer, mainColor);
+			&:hover {
+				color: map-get($nav, btnColor);
+				@include trans;
+			}
+		}
+	}
+}
+
+
+/*Loading spiner*/
+
+.spinner-wrapper {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.spinner {
+	width: 10em;
+	height: 10em;
+	border-top: 1em solid map-get($nav, mainColor);
+	border-right: 1em solid transparent;
+	animation: spinner 0.8s linear infinite;
+	border-radius: 50%;
+	margin: auto;
+}
+
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+/*Right And left*/
+
+
+/*Media Query codes*/
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+	 
+}
+@media (max-width: 575.98px) { 
+	:root {
+		font-size: 12px;
+	}
+	.ads-heading {
+		display: none;
+	}
+	.ads-btn {
+		margin: auto;
+	}
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+	:root {
+		font-size: 12px;
+	}
+	.ads-heading {
+		display: none;
+	}
+	.ads-btn {
+		margin: auto;
+	}
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+	:root {
+		font-size: 12px;
+	}
+	.ads-heading {
+		display: none;
+	}
+	.ads-btn {
+		margin: auto;
+	}
+ }

@@ -1,0 +1,79 @@
+$main:( "mainColor":rgb(22, 24, 34), "gredColor":rgb(30, 35, 63), "subColor":rgb(134, 141, 164), "largeSize":2rem, "mainSize":1.4rem, "smallSize":1.1rem, );
+$banner:( "pding":120px 0, );
+$nav:( "mainColor":rgb(74, 97, 221), "btnColor":#6a7ad5, "whiteColor0":rgb(221, 226, 244), "subColor":#99A1BA, "normalSize":1rem, "midSize":.7rem, "smallSize":.1rem);
+$fig:( "mainColor":#696f82, "muted":rgb(63, 69, 90), "silver":rgb(219, 224, 242), "backlight":rgb(49, 53, 72), "backdark":rgb(43, 47, 64), "subColor":rgb(73, 95, 214), "forHover":#6a7ad5);
+$footer:( "mainColor":rgb(153, 161, 186), "subColor":rgb(93, 210, 181), "backColor":rgb(39, 77, 81));
+@mixin flexcenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin flx($dir, $align:flex-start, $jus:flex-start) {
+	display: flex;
+	flex-direction: $dir;
+	align-items: $align;
+	justify-content: $jus;
+}
+
+@mixin trans {
+	transition: all .35s 0s ease-in-out;
+	-webkit-transition: all .35s 0s ease-in-out;
+	-moz-transition: all .35s 0s ease-in-out;
+	-ms-transition: all .35s 0s ease-in-out;
+	-o-transition: all .35s 0s ease-in-out;
+}
+
+@mixin btn-cir {
+	border-radius: 50%;
+	width: 0.5rem;
+	height: .5rem;
+	padding: 0.35rem;
+	background: rgb(105, 111, 130);
+	border: none;
+}
+
+
+/*Fade and show*/
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+	@media (prefers-reduced-motion) {
+		.animated {
+			-webkit-animation: unset !important;
+			animation: unset !important;
+			-webkit-transition: none !important;
+			transition: none !important;
+		}
+	}
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin transform($value) {
+	-webkit-transform: $value;
+	-moz-transform: $value;
+	-ms-transform: $value;
+	-o-transform: $value;
+	transform: $value;
+}
